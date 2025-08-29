@@ -1,0 +1,137 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background: #222936;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  gap: 70px;
+  perspective: 1000px;
+}
+
+/* Cube base */
+.cube {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transform-style: preserve-3d;
+  transform: rotateX(30deg) rotateY(-45deg);
+}
+
+/* Faces */
+.face {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 3px;
+  background: transparent;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+/* Small squares inside each face */
+.square {
+  border: 1.5px solid rgba(10, 9, 9, 0.3);
+  border-radius: 2px;
+  opacity: 0.85;
+}
+
+/* Faces positioning */
+.face.top {
+  transform: rotateX(90deg) translateZ(75px);
+  transform-origin: center center;
+  top: 0;
+  left: 0;
+  z-index: 6;
+}
+
+.face.front {
+  transform: translateZ(75px);
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.face.side {
+  transform: rotateY(90deg) translateZ(75px);
+  transform-origin: center center;
+  top: 0;
+  left: 0;
+  z-index: 4;
+}
+
+.face.back {
+  transform: rotateY(180deg) translateZ(75px);
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.face.left {
+  transform: rotateY(-90deg) translateZ(75px);
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.face.bottom {
+  transform: rotateX(-90deg) translateZ(75px);
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Colors for left cube */
+.cube-left .yellow {
+  background-color: rgba(244, 182, 46, 0.8);
+}
+.cube-left .red {
+  background-color: rgba(239, 76, 76, 0.8);
+}
+.cube-left .green {
+  background-color: rgba(45, 187, 147, 0.8);
+}
+.cube-left .orange {
+  background-color: rgba(229, 114, 47, 0.8);
+}
+.cube-left .blue {
+  background-color: rgba(47, 109, 229, 0.8);
+}
+.cube-left .white {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Colors for right cube */
+.cube-right .yellow {
+  background-color: rgba(244, 182, 46, 0.8);
+}
+.cube-right .blue {
+  background-color: rgba(47, 109, 229, 0.8);
+}
+.cube-right .red {
+  background-color: rgba(239, 76, 76, 0.8);
+}
+.cube-right .green {
+  background-color: rgba(45, 187, 147, 0.8);
+}
+.cube-right .orange {
+  background-color: rgba(229, 114, 47, 0.8);
+}
+.cube-right .white {
+  background-color: rgba(255, 255, 255, 0.8);
+}

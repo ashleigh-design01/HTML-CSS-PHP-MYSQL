@@ -1,0 +1,69 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and section styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fef08a; /* light yellow */
+}
+
+.blog-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Title */
+.blog-section h1 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid black;
+  background-color: white;
+}
+
+/* Post grid container */
+.posts-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* Post card styling */
+.post-card {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #333;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  width: 100%; /* Fill the grid cell */
+}
+
+.post-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.post-card p {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.post-card a {
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Responsive grid at ≥1440px: 3 columns */
+@media screen and (min-width: 1440px) {
+  .posts-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,0 +1,65 @@
+/* Reset and center */
+body {
+  margin: 0;
+  background: #1e1e2f;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container with 3D perspective */
+.scene {
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+/* The cube itself */
+.cube {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(-30deg) rotateY(45deg);
+  animation: spin 20s infinite linear;
+}
+
+/* All cube faces */
+.face {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2px;
+}
+
+/* Grid squares (stickers) */
+.face div {
+  background: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Positioning each face */
+.front  { transform: rotateY(  0deg) translateZ(75px); }
+.back   { transform: rotateY(180deg) translateZ(75px); }
+.right  { transform: rotateY( 90deg) translateZ(75px); }
+.left   { transform: rotateY(-90deg) translateZ(75px); }
+.top    { transform: rotateX( 90deg) translateZ(75px); }
+.bottom { transform: rotateX(-90deg) translateZ(75px); }
+
+/* Color themes for each face */
+.front  div { background: red; }
+.back   div { background: orange; }
+.right  div { background: green; }
+.left   div { background: blue; }
+.top    div { background: yellow; }
+.bottom div { background: white; }
+
+/* Optional: spinning animation */
+@keyframes spin {
+  from { transform: rotateX(-30deg) rotateY(0deg); }
+  to   { transform: rotateX(-30deg) rotateY(360deg); }
+}
